@@ -7,6 +7,9 @@ class Point:
         self.__y = y
         self.__z = z
 
+    def __str__(self) -> str:
+        return f"P({ self.__x }, { self.__y }, { self.__z })"
+
     def getPosition(self) -> positionVector:
         return [self.__x, self.__y, self.__z]
 
