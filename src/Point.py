@@ -16,7 +16,10 @@ class Point:
 class MassPoint(Point):
     def __init__(self, mass: float, x: float, y: float, z: float) -> None:
         super().__init__(x, y, z)
-        self.mass = mass
+        self.__mass = mass
 
         if self.mass <= 0:
             raise Exception("mass can't be negative or zero")
+
+    def __str__(self) -> str:
+        return f"Pm({ self.__mass }, { self.__x }, { self.__y }, { self.__z })"
