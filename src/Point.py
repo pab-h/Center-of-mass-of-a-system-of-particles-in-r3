@@ -13,6 +13,18 @@ class Point:
     def getPosition(self) -> positionVector:
         return [self.__x, self.__y, self.__z]
 
+    @property
+    def x(self) -> float:
+        return self.__x
+
+    @property
+    def y(self) -> float:
+        return self.__y
+
+    @property
+    def z(self) -> float:
+        return self.__z
+
 class MassPoint(Point):
     def __init__(self, mass: float, x: float, y: float, z: float) -> None:
         super().__init__(x, y, z)
@@ -22,4 +34,4 @@ class MassPoint(Point):
             raise Exception("mass can't be negative or zero")
 
     def __str__(self) -> str:
-        return f"Pm({ self.__mass }, { self.__x }, { self.__y }, { self.__z })"
+        return f"Pm({ self.__mass }, { self.x }, { self.y }, { self.z })"
