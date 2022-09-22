@@ -33,5 +33,9 @@ class MassPoint(Point):
         if self.__mass <= 0:
             raise Exception("mass can't be negative or zero")
 
+    @property
+    def mass(self) -> float:
+        return self.__mass
+
     def __str__(self) -> str:
         return f"Pm({ self.__mass }, { self.x }, { self.y }, { self.z })"
