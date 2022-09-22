@@ -1,6 +1,7 @@
 from functools import reduce
 from src.Point import MassPoint
 from src.Point import Point
+import matplotlib.pyplot as pyplot
 
 class ParticleSystem:
     def __init__(self, particles: list[MassPoint] = []) -> None:
@@ -38,6 +39,13 @@ class ParticleSystem:
             return accumulated + current.mass
 
         return reduce(reduceMassParticles, self.__particles, 0)
+
+    def plot(self) -> None:
+        figure = pyplot.figure(figsize=(4, 4))
+        axes = figure.add_subplot(111, projection="3d")
+        axes.scatter(2, 3, 4)
+
+        pyplot.show()
 
     @property
     def massCenter(self) -> Point:

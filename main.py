@@ -6,4 +6,4 @@ system = ParticleSystem([
     MassPoint(10, 1, 0, 0)
 ])
 
-print(system.massCenter)
+system.plot()
