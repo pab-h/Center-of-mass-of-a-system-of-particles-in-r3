@@ -7,7 +7,7 @@ class ParticleSystem:
         self.__massCenter = self.calcMassCenter()
 
     def addParticles(self, particles: list[MassPoint]) -> None:
-        self.__particles += particles
+        self.__particles.extend(particles)
         self.__massCenter = self.calcMassCenter()
 
     def calcMassCenter(self) -> Point:
