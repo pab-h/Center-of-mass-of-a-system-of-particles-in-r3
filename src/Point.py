@@ -18,7 +18,7 @@ class MassPoint(Point):
         super().__init__(x, y, z)
         self.__mass = mass
 
-        if self.mass <= 0:
+        if self.__mass <= 0:
             raise Exception("mass can't be negative or zero")
 
     def __str__(self) -> str:
