@@ -10,9 +10,6 @@ class Point:
     def __str__(self) -> str:
         return f"P({ self.__x }, { self.__y }, { self.__z })"
 
-    def getPosition(self) -> positionVector:
-        return [self.__x, self.__y, self.__z]
-
     @property
     def x(self) -> float:
         return self.__x
