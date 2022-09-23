@@ -1,9 +1,15 @@
 from src.ParticleSystem import ParticleSystem
 from src.Point import MassPoint
+from random import randrange
 
-system = ParticleSystem([
-    MassPoint(10, 0, 0, 0),
-    MassPoint(10, 1, 0, 0)
-])
+def getRandomMassPoint() -> MassPoint:
+    return MassPoint(
+        randrange(1, 100),
+        randrange(1, 100),
+        randrange(1, 100),
+        randrange(1, 100),
+    )
+
+system = ParticleSystem([ getRandomMassPoint() for _ in range(10)])
 
 system.plot()
