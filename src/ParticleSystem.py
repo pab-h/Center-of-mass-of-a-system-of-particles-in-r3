@@ -41,10 +41,24 @@ class ParticleSystem:
         return reduce(reduceMassParticles, self.__particles, 0)
 
     def plot(self) -> None:
-        figure = pyplot.figure(figsize=(4, 4))
+        figure = pyplot.figure(figsize=(100, 100))
         axes = figure.add_subplot(111, projection="3d")
-        axes.scatter(2, 3, 4)
 
+        for particle in self.__particles:
+            axes.scatter(
+                particle.x,
+                particle.y,
+                particle.z,
+                color = "blue",
+                s = particle.mass
+            )
+        axes.scatter(
+            self.__massCenter.x,
+            self.__massCenter.y,
+            self.__massCenter.z,
+            color = "orange"
+        )
+        
         pyplot.show()
 
     @property
